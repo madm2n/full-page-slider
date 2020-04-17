@@ -37,7 +37,7 @@ function init() {
       const $slide = $slides[slider.index];
       const $child = $slide.childNodes[1];
 
-      if ($child &&  ($child.offsetHeight + $child.scrollTop) === $child.scrollHeight) {
+      if ($child && ($child.offsetHeight + $child.scrollTop) === $child.scrollHeight) {
         slider.index++;
         $slides[slider.index].classList.add(ACTIVE_CLASS);
       }
