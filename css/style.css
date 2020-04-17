@@ -34,6 +34,11 @@ h2 {
   font-size: 2rem;
 }
 
+p {
+  width: 100%;
+  text-align: center;
+}
+
 ul {
   margin: 0;
   padding: 0 0 0 2.5rem;
@@ -96,17 +101,20 @@ img {
 
 .heading-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .heading-inner > * {
-  flex: 1 1 50%;
   text-align: center;
 }
 
-
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1024px) {
   .heading-inner {
     flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .heading-inner > * {
+    flex: 1 1 50%;
   }
 }
