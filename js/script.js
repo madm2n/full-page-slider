@@ -1,4 +1,4 @@
-const TRANSITION_TIME = 2000;
+const TRANSITION_TIME = 1000;
 const ACTIVE_CLASS = 'active';
 
 function init() {
@@ -6,7 +6,7 @@ function init() {
   const $main = document.getElementById('main');
   
   const slider = {
-    index: 1,
+    index: 0,
     inProgress: null
   };
 
@@ -30,7 +30,6 @@ function init() {
 
   function down() {
     if (slider.index < $slides.length - 1) {
-      $slides[slider.index].classList.remove(ACTIVE_CLASS);
       slider.index++;
       $slides[slider.index].classList.add(ACTIVE_CLASS);
     }
