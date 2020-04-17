@@ -1,0 +1,91 @@
+:root {
+  --transition-time: 1s;
+  --font-family: 'Finger Paint';
+  --bold: 900;
+  --normal: 400;
+  --color-main: #ffffff;
+  --color-secondary: #000000;
+}
+
+html {
+  height: 100vh;
+  overflow: hidden;
+  font-size: 10px;
+  font-family: var(--font-family, cursive);
+}
+
+body {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: var(--normal, normal);
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  font-weight: var(--bold, bold);
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.slide {
+  box-sizing: border-box;
+  background: var(--color-main, white);
+  overflow: auto;
+  transition: bottom var(--transition-time, 1s);
+  height: 100vh;
+  padding: 2rem;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading > * {
+  flex: 1 1 50%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.portrait {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.default {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
