@@ -69,9 +69,10 @@ img {
 }
 
 .slide-inner {
+  width: 100%;
   box-sizing: border-box;
   overflow: auto;
-  padding: 3rem;
+  padding: 3rem 3rem 3rem 0;
   margin-right: -6rem;
   padding-right: 6rem;
 }
@@ -96,10 +97,16 @@ img {
 .heading-inner {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
 }
 
 .heading-inner > * {
   flex: 1 1 50%;
   text-align: center;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .heading-inner {
+    flex-direction: row;
+  }
 }
