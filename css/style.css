@@ -47,6 +47,11 @@ ul {
 
 figure {
   margin: 0;
+  max-height: 100%;
+}
+
+figcaption {
+  text-align: center;
 }
 
 img {
@@ -106,6 +111,14 @@ img {
 
 .heading-inner > * {
   text-align: center;
+}
+
+.collage-inner {
+  flex-direction: row;
+}
+
+.collage-inner > * {
+  max-width: 450px;
 }
 
 @media screen and (min-width: 1024px) {
