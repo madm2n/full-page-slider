@@ -22,16 +22,25 @@ function init() {
 
   function up() {
     if (slider.index > 0) {
-      $slides[slider.index].classList.remove(ACTIVE_CLASS);
-      slider.index--;
-      $slides[slider.index].classList.add(ACTIVE_CLASS);
+      const $slide = $slides[slider.index];
+
+      if ($slide.childNodes[1] && $slide.childNodes[1].scrollTop === 0) {
+        $slide.classList.remove(ACTIVE_CLASS);
+        slider.index--;
+        $slides[slider.index].classList.add(ACTIVE_CLASS);
+      }
     }
   }
 
   function down() {
     if (slider.index < $slides.length - 1) {
-      slider.index++;
-      $slides[slider.index].classList.add(ACTIVE_CLASS);
+      const $slide = $slides[slider.index];
+      const $child = $slide.childNodes[1];
+
+      if ($child &&  ($child.offsetHeight + $child.scrollTop) === $child.scrollHeight) {
+        slider.index++;
+        $slides[slider.index].classList.add(ACTIVE_CLASS);
+      }
     }
   }
 
@@ -59,6 +68,14 @@ function init() {
       slide(down);
     } else if (touch.endY > touch.startY) {
       slide(up);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.which === 38) {
+      slide(up);
+    } else if (event.which === 40) {
+      slide(down);
     }
   });
 }

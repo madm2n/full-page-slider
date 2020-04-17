@@ -20,11 +20,24 @@ body {
   font-weight: var(--normal, normal);
 }
 
-h1 {
-  font-size: 3rem;
+h1, h2 {
   margin: 0;
   padding: 0;
   font-weight: var(--bold, bold);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 2.5rem;
+  max-height: 100%;
 }
 
 figure {
@@ -56,13 +69,17 @@ img {
 }
 
 .slide-inner {
-  padding: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 3rem;
+  margin-right: -6rem;
+  padding-right: 6rem;
 }
 
 .slide {
   transition: bottom var(--transition-time, 1s);
   background: var(--color-main, white);
-  overflow: auto;
+  overflow: hidden;
   position: absolute;
   z-index: 0;
   bottom: -100vh;
@@ -70,6 +87,10 @@ img {
 
 .slide.active {
   bottom: 0;
+}
+
+.tribute-inner {
+  align-items: flex-start;
 }
 
 .heading-inner {
