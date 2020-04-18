@@ -5,6 +5,7 @@
   --normal: 400;
   --color-main: #ffffff;
   --color-secondary: #000000;
+  --color-links: #7997a1;
 }
 
 html {
@@ -16,8 +17,13 @@ html {
 
 body {
   margin: 0;
+  color: var(--color-secondary, black);
   font-size: 1.5rem;
   font-weight: var(--normal, normal);
+}
+
+a {
+  color: var(--color-links, black);
 }
 
 h1, h2 {
@@ -102,6 +108,40 @@ img {
 
 .tribute-inner {
   align-items: flex-start;
+}
+
+.heading::after {
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  background-image: url("../img/down.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: cue 1s infinite;
+}
+
+@keyframes cue {
+  0% {
+    bottom: 5px;
+  }
+  25% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 15px;
+  }
+  75% {
+    bottom: 10px;
+  }
+  100% {
+    bottom: 5px;
+  }
 }
 
 .heading-inner {

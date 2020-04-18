@@ -23,8 +23,9 @@ function init() {
   function up() {
     if (slider.index > 0) {
       const $slide = $slides[slider.index];
+      const $child = $slide.childNodes[1];
 
-      if ($slide.childNodes[1] && $slide.childNodes[1].scrollTop === 0) {
+      if ($child && $child.scrollTop === 0) {
         $slide.classList.remove(ACTIVE_CLASS);
         slider.index--;
         $slides[slider.index].classList.add(ACTIVE_CLASS);
