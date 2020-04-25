@@ -4,7 +4,7 @@ const ACTIVE_CLASS = 'active';
 function init() {
   const $slides = document.getElementsByClassName('slide');
   const $main = document.getElementById('main');
-  
+
   const slider = {
     index: 0,
     inProgress: null
